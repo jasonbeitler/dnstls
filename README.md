@@ -18,7 +18,7 @@ Just a quick how to use Studdby to setup DNS over TLS.
     
 4. Start the stubby service now and on boot
 
-    $sudo brew services enable stubby
+    $sudo brew services start stubby
     
 5. Change DNS server to 127.0.0.1
 
