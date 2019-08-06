@@ -1,4 +1,4 @@
-#
+
 # This is a yaml version of the stubby configuration file (it replaces the 
 # json based stubby.conf file used in earlier versions of getdns/stubby).
 #
@@ -30,7 +30,7 @@ resolution_type: GETDNS_RESOLUTION_STUB
 # Fallback transport options are specified by including multiple values in the
 # list.  Strict mode (see below) should use only GETDNS_TRANSPORT_TLS.
 dns_transport_list:
-  - GETDNS_TRANSPORT_TLS GETDNS_TRANSPORT_UDP GETDNS_TRANSPORT_TCP
+  - GETDNS_TRANSPORT_TLS
 
 # Selects Strict or Opportunistic Usage profile as described in
 # https://datatracker.ietf.org/doc/draft-ietf-dprive-dtls-and-tls-profiles/
@@ -112,28 +112,8 @@ round_robin_upstreams: 1
 #              key
 #   tls_port: Port for TLS (default is 853)
 upstream_recursive_servers:
-# IPv4 addresses
-# The 1.1.1.1 Cloudflare Servers
+## Cloudflare 1.1.1.1 and 1.0.0.1
   - address_data: 1.1.1.1
     tls_auth_name: "cloudflare-dns.com"
-    tls_pubkey_pinset:
-      - digest: "sha256"
-        value: yioEpqeR4WtDwE9YxNVnCEkTxIjx6EEIwFSQW+lJsbc=
   - address_data: 1.0.0.1
     tls_auth_name: "cloudflare-dns.com"
-    tls_pubkey_pinset:
-      - digest: "sha256"
-        value: yioEpqeR4WtDwE9YxNVnCEkTxIjx6EEIwFSQW+lJsbc=
-
-# IPv6 addresses
-# The 1.1.1.1 Cloudflare Servers
-  - address_data: 2606:4700:4700::1111
-    tls_auth_name: "cloudflare-dns.com"
-    tls_pubkey_pinset:
-      - digest: "sha256"
-        value: yioEpqeR4WtDwE9YxNVnCEkTxIjx6EEIwFSQW+lJsbc=
-  - address_data: 2606:4700:4700::1001
-    tls_auth_name: "cloudflare-dns.com"
-    tls_pubkey_pinset:
-      - digest: "sha256"
-        value: yioEpqeR4WtDwE9YxNVnCEkTxIjx6EEIwFSQW+lJsbc=
